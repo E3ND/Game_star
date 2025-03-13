@@ -1,0 +1,254 @@
+:root {
+    --main-bg-color-web: #9400D3;
+    --mainbg-color-white: #FFF
+}
+
+body {
+    background-color: #000
+}
+
+.form-inline {
+    display: flex;
+}
+
+/* Navbar */
+.navbar-brand {
+    position: relative;
+}
+
+#logo {
+    width: 50px;
+}
+
+#gamestar-title {
+    color: var(--mainbg-color-white);
+    position: absolute;
+    bottom: -2px;
+    font-size: 30px;
+    left: 55px;
+    font-weight: bold;
+}
+
+#main-navbar {
+    background-color: #121212;
+}
+
+#search-form {
+    margin: 0 auto;
+    background-color: var(--mainbg-color-white);
+    border-radius: 5px;
+    width: 50%;
+    margin-left: 180px;
+}
+
+#search {
+    margin-left: 3rem;
+}
+
+#search-form .form-control {
+    border: none;
+    width: 90%;
+    box-shadow: none;
+}
+
+#navbar {
+    min-width: 30%;
+}
+
+.navbar-nav {
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: var(--mainbg-color-white);
+    transition: .5s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #999;
+    transition: .5s;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#main-container {
+    background-color: #000;
+    color: var(--mainbg-color-white);
+    min-height: 65vh;
+    padding: 40px;
+}
+
+/* Edit profile */
+#profile-image-container {
+    width: 150px;
+    height: 150px;
+    border: 6px solid var(--main-bg-color-web);
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 15px auto;
+}
+
+.page-description {
+    color: #999;
+}
+
+#bio {
+    max-width: 400px;
+}
+
+.form-control.disabled {
+    background-color: #BBB;
+}
+
+#change-password-container {
+    margin-top: 30px;
+}
+
+.edit-profile-page .card-btn {
+    width: auto;
+}
+
+/* footer */
+#footer {
+    background-color: #000;
+    height: 100%;
+    color: var(--mainbg-color-white);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    bottom: 0;
+}
+
+#social-container ul, #footer-links-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#social-container li, #footer-links-container li {
+    /* margin: 0 20px; */
+}
+
+#social-container {
+    display: flex;
+    justify-content: center;
+}
+
+#footer-links-container {
+    display: flex;
+    justify-content: center;
+}
+
+.ul-social {
+    display: flex;
+}
+
+.li-links {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.li-links a{
+    text-decoration: none;
+}
+
+#social-container li {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    transition: .5s;
+    line-height: 3;
+}
+
+#social-container li:hover {
+    background-color: var(--main-bg-color-web);
+}
+
+.li-links a :hover {
+    color: var(--main-bg-color-web);
+}
+
+#social-container a, #footer-links-container a {
+    color: var(--mainbg-color-white);
+    transition: .5s;
+}
+
+#social-container li i {
+    font-size: 25px;
+}
+
+#footer-links-container {
+    margin: 30px 0;
+}
+
+.msg-container {
+    background-color: #000;
+    padding: 15px;
+}
+
+.msg {
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    border: solid 1px #000;
+    text-align: center;
+}
+
+.msg.error {
+    color: #842029;
+    background-color: #F8D7DA;
+    border-color: #F5C2C7;
+}
+
+.msg.success {
+    color: #0F5132;
+    background-color: #D1E7DD;
+    border-color: #BADBCC;
+}
+
+.form-group {
+    margin: 15px 0;
+    align-items: center;
+}
+
+.form-group-edit {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+#auth-row {
+    justify-content: space-evenly;
+}
+
+#login-container h2,
+#register-container h2 {
+    text-align: center;
+    border-bottom: 2px solid var(--main-bg-color-web);
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#login-container form,
+#register-container form {
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+.card-btn {
+    color: #000;
+    background-color: var(--main-bg-color-web);
+    border:  2px solid var(--main-bg-color-web);
+    width: 100%;
+}
+
+.card-btn:hover {
+    background-color: transparent;
+    color: var(--main-bg-color-web);
+    border-color: var(--main-bg-color-web);
+}
