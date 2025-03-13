@@ -21,6 +21,10 @@
         public function getFullName($user) {
             return $user->name . " " . $user->lastName;
         }
+
+        public function imageGenerateName() {
+            return bin2hex(random_bytes(60)) . ".jpg";
+        }
     }
     
     interface UserDAOInterface {

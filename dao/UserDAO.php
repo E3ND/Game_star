@@ -88,7 +88,7 @@ function debug() {
             $stmt->execute();
 
             if($redirect) {
-                $this->message->setMessage("Seja bem-vindo $user->name", "success", "editprofile.php");
+                $this->message->setMessage("Dados atualizados com sucesso!", "success", "editprofile.php");
             }
         }
         public function verifyToken($protected = false) {

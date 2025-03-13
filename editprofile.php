@@ -50,12 +50,12 @@
                     
                     <div class="form-group-edit">
                         <label for="image">Foto:</label>
-                        <input type="file" name="form-control-file" name="image">
+                        <input type="file" name="image">
                     </div>
 
                     <div class="form-group-edit">
                         <label for="bio">Sobre você:</label>
-                        <textarea class="form-control" name="bio" id="bio" rows="5" placeholder="Conte que vocÇe é, o que faz e seus hobbies"><?= $userData->bio ?></textarea>
+                        <textarea class="form-control" name="bio" id="bio" rows="5" placeholder="Conte o que voce é, o que faz e seus hobbies"><?= $userData->bio ?></textarea>
                     </div>
                 </div>
             </div>
