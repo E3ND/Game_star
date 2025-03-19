@@ -53,6 +53,24 @@
         $userDao->update($userData);
 
     } else if($type == "changePassword") {
+        $password = filter_input(INPUT_POST, "password");
+        $confirmPassword = filter_input(INPUT_POST, "confirmPassword");
+
+        $userData = $userDao->verifyToken();
+
+        $id = $userData->id;
+
+        if($password == $confirmPassword) {
+            $user = new User();
+
+            $finalPassword = $user->generatePassword($password);
+
+            $user->password = $finalPassword;
+            $user->id = $id;
+            $userDao->changePassword($user);
+        } else {
+            $message->setMessage("As senhas não são iguais", "error", "back");
+        }
 
     } else {
         $message->setMessage("Informações inválidas", "error", "index.php");
