@@ -30,8 +30,21 @@
         public function findAll() {
 
         }
-        public function getLastesGames() {
+        public function getLatestGames() {
+            $games = [];
 
+            $stmt = $this->conn->query("SELECT * FROM games ORDER BY id DESC");
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+                $gamesArray = $stmt->fetchAll();
+
+                foreach($gamesArray as $game) {
+                    $games[] = $this->buildGame($game);
+                }
+            }
+
+            return $games;
         }
         public function getGamesByCategory($category) {
 
@@ -45,8 +58,25 @@
         public function findByTitle($title) {
 
         }
-        public function create(Game $Game) {
+        public function create(Game $game) {
+            $stmt = $this->conn->prepare("INSERT INTO games (
+                    title, description, image, trailer, category, length, users_id
+                ) VALUES (
+                    :title, :description, :image, :trailer, :category, :length, :users_id
+                )
+            ");
 
+            $stmt->bindParam(":title", $game->title);
+            $stmt->bindParam(":description", $game->description);
+            $stmt->bindParam(":image", $game->image);
+            $stmt->bindParam(":trailer", $game->trailer);
+            $stmt->bindParam(":category", $game->category);
+            $stmt->bindParam(":length", $game->length);
+            $stmt->bindParam(":users_id", $game->users_id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Jogo adicionado com sucesso!", "success", "index.php");
         }
         public function update(Game $movie) {
 

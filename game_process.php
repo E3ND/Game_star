@@ -11,6 +11,7 @@
 
     $message = new Message($BASE_URL);
     $userDao = new UserDAO($conn, $BASE_URL);
+    $gameDao = new GameDAO($conn, $BASE_URL);
 
     $type = filter_input(INPUT_POST, "type");
 
@@ -31,6 +32,7 @@
             $game->trailer = $trailer;
             $game->category = $category;
             $game->length = $length;
+            $game->users_id = $userData->id;
 
             $uploadImage = upload($_FILES, "games");
 
@@ -39,8 +41,6 @@
             }
 
             $game->image = $uploadImage;
-
-            print_r($_POST); print_r($_FILES);exit;
 
             $gameDao->create($game);
         } else {

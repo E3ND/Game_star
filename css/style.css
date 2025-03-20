@@ -276,3 +276,79 @@ body {
     margin: 0 auto;
     padding-top: 7px;
 }
+
+.section-title {
+    font-size: 24px;
+    border-left: 4px solid var(--main-bg-color-web);
+    padding-left: 12px;
+    margin-top: 20px;
+}
+
+.section-description {
+    color: #CCC;
+    font-size: 18px;
+}
+
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;;
+}
+
+.game-card {
+    background-color: #1A1A1A;
+    width: 18%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.game-card .card-img-top {
+    height: 303px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-title {
+    height: 3rem;
+}
+
+.card-title a {
+    font-size: 16px;
+    color: var(--mainbg-color-white);
+    text-decoration: none;
+}
+
+.fas.fa-star {
+    color: var(--main-bg-color-web);
+}
+
+.tating {
+    color: #CCC;
+}
+
+.rate-btn {
+    margin-bottom: 15px;
+    color: #5799EF;
+    background-color: #333;
+    border-color: #333;
+    width: 100%;
+    font-weight: bold;
+}
+
+.rating {
+    color: var(--mainbg-color-white);
+}
+
+.rate-btn:hover {
+    background-color: #444;
+    border-color: #444;
+}
+
+.empty-list {
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    font-weight: bold;
+}
