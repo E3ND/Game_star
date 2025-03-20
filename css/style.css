@@ -252,3 +252,27 @@ body {
     color: var(--main-bg-color-web);
     border-color: var(--main-bg-color-web);
 }
+
+.new-game-container {
+    text-align: center;
+}
+
+#add-game-form {
+    text-align: left;
+}
+
+.game-image-container {
+    height: 400px;
+    min-width: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+.page-title:after {
+    content: "";
+    width: 300px;
+    border-bottom: 2px solid var(--main-bg-color-web);
+    display: block;
+    margin: 0 auto;
+    padding-top: 7px;
+}

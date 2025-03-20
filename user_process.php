@@ -5,6 +5,8 @@
     require_once("models/User.php");
     require_once("models/Message.php");
     require_once("dao/UserDAO.php");
+    require_once("utils/generateChars.php");
+    require_once("utils/uploadImage.php");
 
 
     $message = new Message($BASE_URL);
@@ -27,28 +29,36 @@
         $userData->email = $email;
         $userData->bio = $bio;
 
-        if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
-            $image = $_FILES["image"];
-            $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
-            $jpgArray = ["image/jpeg", "image/jpg"];
+        // if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
+        //     $image = $_FILES["image"];
+        //     $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
+        //     $jpgArray = ["image/jpeg", "image/jpg"];
             
-            if(in_array($image["type"], $imageTypes)) {
+        //     if(in_array($image["type"], $imageTypes)) {
 
-                if(in_array($image, $jpgArray)) {
-                    $imageFile = imagecreatefromjpeg($image["tmp_name"]);
-                } else {
-                    $imageFile = imagecreatefrompng($image["tmp_name"]);
-                }
+        //         if(in_array($image, $jpgArray)) {
+        //             $imageFile = imagecreatefromjpeg($image["tmp_name"]);
+        //         } else {
+        //             $imageFile = imagecreatefrompng($image["tmp_name"]);
+        //         }
 
-                $imageName = $user->imageGenerateName();
+        //         $imageName = generateImageName();
 
-                imagejpeg($imageFile, "./img/users/" . $imageName, 100);
+        //         imagejpeg($imageFile, "./img/users/" . $imageName, 100);
 
-                $userData->image = $imageName;
-            } else {
-                $message->setMessage("Tipo inválido de imagem, insira png, jpeg ou jpg", "error", "index.php");
-            }
+        //         $userData->image = $imageName;
+        //     } else {
+        //         $message->setMessage("Tipo inválido de imagem, insira png, jpeg ou jpg", "error", "index.php");
+        //     }
+        // }
+
+        $uploadImage = upload($_FILES, "users");
+
+        if($uploadImage === false) {
+            $message->setMessage("Tipo inválido de imagem, insira png, jpeg ou jpg", "error", "index.php");
         }
+
+        $userData->image = $uploadImage;
         
         $userDao->update($userData);
 

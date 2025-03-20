@@ -14,11 +14,12 @@
         <div class="offset-md-4 col-md-4 new-game-container">
             <h1 class="page-title">Adicionar Jogo</h1>
             <p class="page-description">Adicione sua crítica e compartilhe com o mundo!</p>
-            <form action="<?= $BASE_URL ?>game_process.php" id="add-game-form" method="post" enctype="multipart/form-data">
+            
+            <form action="<?= $BASE_URL ?>game_process.php" method="POST" enctype="multipart/form-data" id="add-game-form">
                 <input type="hidden" name="type" value="create">
                 <div class="form-group">
                     <label for="title">Título:</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Digite o título do seu jogo">
+                    <input type="text" class="form-control" id="title2" name="title" placeholder="Digite o título do seu jogo">
                 </div>
                 <div class="form-group">
                     <label for="title">Imagem:</label>
@@ -26,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="length">Tempo da campanha:</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Digite a duração do jogo">
+                    <input type="text" class="form-control" id="length" name="length" placeholder="Digite a duração do jogo">
                 </div>
                 <div class="form-group">
                     <label for="category">Categoria</label>
@@ -39,11 +40,11 @@
                 </div>
                 <div class="form-group">
                     <label for="trailer">Trailer</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Insira o link do trailer">
+                    <input type="text" class="form-control" id="Trailer" name="Trailer" placeholder="Insira o link do trailer">
                 </div>
                 <div class="form-group">
                     <label for="description">Descrição</label>
-                    <textarea name="" id="description" class="form-control" name="description" rows="5" placeholder="Descreva o filme..."></textarea>
+                    <textarea name="description" id="description" class="form-control" name="description" rows="5" placeholder="Descreva o filme..."></textarea>
                 </div>
 
                 <input type="submit" class="btn card-btn" value="Adicionar jogo">
