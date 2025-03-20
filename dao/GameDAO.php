@@ -47,7 +47,26 @@
             return $games;
         }
         public function getGamesByCategory($category) {
+            $games = [];
 
+            $stmt = $this->conn->prepare("SELECT * FROM games 
+                    WHERE category = :category
+                    ORDER BY id DESC
+                ");
+
+            $stmt->bindParam(":category", $category);         
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+                $gamesArray = $stmt->fetchAll();
+
+                foreach($gamesArray as $game) {
+                    $games[] = $this->buildGame($game);
+                }
+            }
+
+            return $games ?? [];
         }
         public function getGamesByUserId($id) {
 
