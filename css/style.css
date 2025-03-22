@@ -108,7 +108,7 @@ body {
     margin-top: 30px;
 }
 
-.edit-profile-page .card-btn {
+.edit-profile-page .card-btn, #game-container .card-btn {
     width: auto;
 }
 
@@ -351,4 +351,70 @@ body {
     font-size: 18px;
     width: 100%;
     font-weight: bold;
+}
+
+.game-container {
+    text-align: right;
+}
+
+#game-dashboard .table{
+    color: var(--mainbg-color-white);
+}
+
+#game-dashboard .table th {
+    border-top: none;
+}
+
+#game-dashboard .table tr {
+    padding: 15px 0;;
+}
+
+.table-game-title {
+    color: var(--mainbg-color-white);
+    font-weight: bold;
+    transition: .5s;
+}
+
+.table-game-title:hover {
+    color: var(--main-bg-color-web);
+}
+
+.actions-column {
+    max-width: 75px;
+    text-align: center;
+}
+
+.actions-column form {
+    display: inline-block;
+}
+
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: .5s;
+    border: none;
+}
+
+.edit-btn {
+    background-color: #0DCAF0;
+    color: var(--mainbg-color-white);
+}
+
+.edit-btn:hover {
+    background-color: transparent;
+    color: #0DCAF0;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background-color: #DC3545;
+    color: var(--mainbg-color-white);
+}
+
+.delete-btn:hover {
+    background-color: transparent;
+    color: #DC3545;
+    text-decoration: none;
 }

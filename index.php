@@ -61,5 +61,5 @@
 <!-- https://cdnjs.com/libraries/font-awesome -->
 <!-- https://www.flaticon.com/free-icons/game-controller -->
 <?php
-require_once("templates/footer.php");
+    require_once("templates/footer.php");
 ?>

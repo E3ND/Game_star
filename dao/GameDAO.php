@@ -66,10 +66,28 @@
                 }
             }
 
-            return $games ?? [];
+            return $games;
         }
         public function getGamesByUserId($id) {
+            $games = [];
 
+            $stmt = $this->conn->prepare("SELECT * FROM games 
+                    WHERE users_id = :users_id
+                ");
+
+            $stmt->bindParam(":users_id", $id);         
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+                $gamesArray = $stmt->fetchAll();
+
+                foreach($gamesArray as $game) {
+                    $games[] = $this->buildGame($game);
+                }
+            }
+
+            return $games;
         }
         public function findById($id) {
 
