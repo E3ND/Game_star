@@ -90,7 +90,23 @@
             return $games;
         }
         public function findById($id) {
+            $game = [];
 
+            $stmt = $this->conn->prepare("SELECT * FROM games 
+                    WHERE id = :id
+                ");
+
+            $stmt->bindParam(":id", $id);         
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+                $gameData = $stmt->fetch();
+
+                return $this->buildGame($gameData);
+            } else {
+                return false;
+            }
         }
         public function findByTitle($title) {
 

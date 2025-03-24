@@ -108,7 +108,7 @@ body {
     margin-top: 30px;
 }
 
-.edit-profile-page .card-btn, #game-container .card-btn {
+.edit-profile-page .card-btn, #game-container .card-btn, #review-form .card-btn {
     width: auto;
 }
 
@@ -418,3 +418,4 @@ body {
     color: #DC3545;
     text-decoration: none;
 }
+
