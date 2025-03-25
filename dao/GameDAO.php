@@ -131,10 +131,36 @@
 
             $this->message->setMessage("Jogo adicionado com sucesso!", "success", "index.php");
         }
-        public function update(Game $movie) {
+        public function update(Game $game) {
+            $stmt = $this->conn->prepare("UPDATE games SET
+                title = :title,
+                description = :description,
+                image = :image,
+                category = :category,
+                trailer = :trailer,
+                length = :length
+                WHERE id = :id
+            ");
 
+            $stmt->bindParam(":id", $game->id);
+            $stmt->bindParam(":title", $game->title);
+            $stmt->bindParam(":description", $game->description);
+            $stmt->bindParam(":image", $game->image);
+            $stmt->bindParam(":category", $game->category);
+            $stmt->bindParam(":trailer", $game->trailer);
+            $stmt->bindParam(":length", $game->length);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Jogo atualizado com sucesso!", "success", "game.php?id=" . $game->id);
         }
         public function delete($id) {
+            $stmt = $this->conn->prepare("DELETE FROM games WHERE id = :id");
 
+            $stmt->bindParam("id", $id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Jogo removido com sucesso!", "success", "dashboard.php");
         }
     }

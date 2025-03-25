@@ -48,7 +48,7 @@
                                 Editar
                             </a>
 
-                            <form action="<?= $BASE_URL ?>game_process.php">
+                            <form action="<?= $BASE_URL ?>game_process.php" method="POST">
                                 <input type="hidden" name="type" value="delete">
                                 <input type="hidden" name="id" value="<?= $game->id ?>">
                                 <button type="submit" class="delete-btn">

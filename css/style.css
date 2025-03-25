@@ -82,14 +82,20 @@ body {
 }
 
 /* Edit profile */
-#profile-image-container {
+#profile-image-container,
+.profile-image-container {
     width: 150px;
     height: 150px;
-    border: 6px solid var(--main-bg-color-web);
+    border: 4px solid var(--main-bg-color-web);
     border-radius: 100%;
     background-size: cover;
     background-position: center;
     margin: 15px auto;
+}
+
+.profile-image-container {
+    width: 70px;
+    height: 70px;
 }
 
 .page-description {
@@ -108,7 +114,7 @@ body {
     margin-top: 30px;
 }
 
-.edit-profile-page .card-btn, #game-container .card-btn, #review-form .card-btn {
+.edit-profile-page .card-btn, #game-container .card-btn, #review-form .card-btn, #edit-game-form .card-btn {
     width: auto;
 }
 
@@ -419,3 +425,52 @@ body {
     text-decoration: none;
 }
 
+.game-container {
+    text-align: center;
+}
+
+.game-details {
+    margin: 25px 0;
+}
+
+.pipe {
+    border: 1px solid #333;
+    margin: 0 10px;
+}
+
+#reviews-title {
+    margin-bottom: 25px;
+}
+
+#reviews-form-container {
+    background-color: #333;
+    padding: 20px;
+}
+
+/* #reviews-form-container select,
+#reviews-form-container textarea {
+    width: 50%;;
+} */
+
+#reviews-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 4px solid var(--main-bg-color-web);
+}
+
+.review {
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+.author-details-container {
+    padding-top: 20px;
+}
+
+.author-name a {
+    color: var(--main-bg-color-web);
+}
+
+.comment-title {
+    color: #999;
+}
