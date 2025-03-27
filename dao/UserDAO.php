@@ -173,7 +173,7 @@ function debug() {
 
             return $user;
         }
-        public function finById($id) {
+        public function findById($id) {
             
         }
 

@@ -33,6 +33,6 @@
         public function changePassword(User $user);
         public function findByToken($token);
         public function findByEmail($email);
-        public function finById($id);
+        public function findById($id);
         public function destroyToken();
     }
