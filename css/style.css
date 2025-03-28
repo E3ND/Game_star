@@ -522,6 +522,14 @@ body {
     width: auto;
 }
 
+#search-title {
+    font-size: 40px;
+}
+
+#search-result, .back-link {
+    color: var(--main-bg-color-web);
+}
+
 /* .added-games-container .games-container {
     padding: 20px;
 }

@@ -116,7 +116,25 @@
             }
         }
         public function findByTitle($title) {
+            $games = [];
 
+            $stmt = $this->conn->prepare("SELECT * FROM games 
+                    WHERE title LIKE :title
+                ");
+
+            $stmt->bindValue(":title", "%".$title."%");         
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+                $gamesArray = $stmt->fetchAll();
+
+                foreach($gamesArray as $game) {
+                    $games[] = $this->buildGame($game);
+                }
+            }
+
+            return $games;
         }
         public function create(Game $game) {
             $stmt = $this->conn->prepare("INSERT INTO games (
