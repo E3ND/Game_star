@@ -65,7 +65,7 @@
                     $games[] = $this->buildGame($game);
                 }
             }
-
+            
             return $games;
         }
         public function getGamesByUserId($id) {

@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div id="profile-image-container" style="background-image: url('<?= $BASE_URL ?>img/users/<?= $userData->image ?>');"></div>
+                    <div id="profile-image-container" style="background-image: url('<?= $BASE_URL ?>img/users/<?= ($userData->image == null) ? 'user.png' : $userData->image ?>');"></div>
                     
                     <div class="form-group-edit">
                         <label for="image">Foto:</label>

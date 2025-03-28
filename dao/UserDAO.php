@@ -174,7 +174,18 @@ function debug() {
             return $user;
         }
         public function findById($id) {
-            
+            if($id == "") return false;
+
+                $stmt = $this->conn->prepare("SELECT * FROM users WHERE id = :id");
+                $stmt->bindParam(":id", $id);
+                $stmt->execute();
+
+                if($stmt->rowCount() === 0) return false;
+
+                $data = $stmt->fetch();
+                $user = $this->buildUser($data);
+
+            return $user;
         }
 
         public function destroyToken() {
