@@ -9,7 +9,7 @@
         public $category;
         public $length;
         public $users_id;
-
+        public $rating;
     }
 
     interface GameDAOInterface {

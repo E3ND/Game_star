@@ -1,6 +1,7 @@
 <?php
     require_once("models/Game.php");
     require_once("models/Message.php");
+    require_once("dao/ReviewDAO.php");
 
     class GameDAO implements GameDAOInterface {
         private $conn;
@@ -24,6 +25,12 @@
             $game->category = $data["category"];
             $game->length = $data["length"];
             $game->users_id = $data["users_id"];
+
+            $reviewDao = new ReviewDAO($this->conn, $this->url);
+
+            $rating = $reviewDao->getRating($game->id);
+
+            $game->rating = $rating;
 
             return $game;
         }
@@ -65,7 +72,7 @@
                     $games[] = $this->buildGame($game);
                 }
             }
-            
+
             return $games;
         }
         public function getGamesByUserId($id) {

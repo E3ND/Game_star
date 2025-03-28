@@ -22,7 +22,7 @@
     } else {
         $userData = $userDao->findById($id);
 
-        if($userData) {
+        if(!$userData) {
             $message->setMessage("Usuário não encontrado!", "error", "index.php");
         }
     }

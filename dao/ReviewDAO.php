@@ -69,9 +69,40 @@
             return $reviews;
         }
         public function hasAlreadyReview($id, $userId) {
+            $stmt = $this->conn->prepare("SELECT * FROM reviews WHERE games_id = :games_id AND users_id = :users_id");
 
+            $stmt->bindParam(":games_id", $id);
+            $stmt->bindParam(":users_id", $userId);
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+                return true;
+            } else {
+                false;
+            }
         }
         public function getRating($id) {
+            $stmt = $this->conn->prepare("SELECT * FROM reviews WHERE games_id = :games_id");
 
+            $stmt->bindParam(":games_id", $id);
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+                $rating = 0;
+
+                $reviews = $stmt->fetchAll();
+
+                foreach($reviews as $review) {
+                    $rating += $review["rating"];
+                }
+
+                $rating = $rating / count($reviews);
+            } else {
+                $rating = "não avaliado";
+            }
+
+            return $rating;
         }
     }
